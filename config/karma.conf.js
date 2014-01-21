@@ -13,7 +13,8 @@ module.exports = function(config){
     exclude : [      
     	'js/lib/angular/angular-loader.js',
 		'js/lib/angular/*.min.js',
-		'js/lib/angular/angular-scenario.js'
+		'js/lib/angular/angular-scenario.js',
+		'js/bootstrap*.js'
     ],
 
     autoWatch : true,
