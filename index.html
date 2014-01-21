@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="gameApp">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.css">
+  <script src="js/lib/angular/angular.js"></script>
+  <script src="js/game.js"></script>
+</head>
+<body ng-controller="pyatnashkyCtrl">
+	<input type="text" ng-model="q.name">
+	<ul>
+		<li ng-repeat="line in lines | filter:q:strict">
+			<span>{{line.name}}</span>
+			<p>{{line.snippet}}</p>
+		</li>
+	</ul>
+	<p>All: {{lines.length}} items</p>
+	<p>Filter: {{q.name}}</p>
+</body>
+</html>
