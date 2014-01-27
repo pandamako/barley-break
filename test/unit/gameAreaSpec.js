@@ -12,4 +12,16 @@ describe('gameArea', function() {
 		expect(area.Places[15]).toBeNull(1);
 		expect(area.Places.getUnique().length).toBe(area.Places.length);
 	});
+
+	it('item should be moved to the nearest empty place', function() {
+		var area = new gameArea();
+		var result = area.move(area.Places[14]);
+		expect(result).toBe(true);
+	});
+
+	it('item doesn\'t have place to move' , function() {
+		var area = new gameArea();
+		var result = area.move(area.Places[13]);
+		expect(result).toBe(false);
+	});
 });
