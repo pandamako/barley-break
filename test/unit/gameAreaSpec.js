@@ -17,11 +17,14 @@ describe('gameArea', function() {
 		var area = new gameArea();
 		var result = area.move(area.Places[14]);
 		expect(result).toBe(true);
+		expect(area.Places[14]).toBeNull();
+		expect(area.Places[15]).toBeDefined();
 	});
 
 	it('item doesn\'t have place to move' , function() {
 		var area = new gameArea();
 		var result = area.move(area.Places[13]);
 		expect(result).toBe(false);
+		expect(area.Places[13]).toBeDefined();
 	});
 });

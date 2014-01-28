@@ -6,13 +6,7 @@ describe('gameApp', function() {
 		it('should create "lines" with 2 elements', inject(function($controller) {
 			var scope = {};
 			var ctrl = $controller('pyatnashkyCtrl', {$scope: scope});
-			expect(scope.lines.length).toBe(2); 
+			expect(scope.Places.length).toBe(16); 
 		}));
-
-		// it('should create "lines" with 3 elements', inject(function($controller) {
-		// 	var scope = {};
-		// 	var ctrl = $controller('pyatnashkyCtrl', {$scope: scope});
-		// 	expect(scope.lines.length).toBe(3); 
-		// }));
 	});
 });
