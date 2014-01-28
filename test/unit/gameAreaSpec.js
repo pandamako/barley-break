@@ -27,4 +27,17 @@ describe('gameArea', function() {
 		expect(result).toBe(false);
 		expect(area.Places[13]).toBeDefined();
 	});
+
+	it('places numbers must start from 1 to 15', function() {
+		var area = new gameArea();
+		area.Places.sort(function(a,b){return a-b});
+		expect(area.Places).toEqual([null, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+	});
+
+	it('item can not move through diagonal', function() {
+		var area = new gameArea();
+		var result = area.move(area.Places[10]);
+		expect(result).toBe(false);
+		expect(area.Places[10]).toBeDefined();
+	});
 });

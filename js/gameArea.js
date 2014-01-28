@@ -18,7 +18,7 @@ var gameArea = function() {
 	for (var i = this.Places.length - 2; i >= 0; i--) {
 		var number;
 		do {
-			number = this.getRandom(0, 14);
+			number = this.getRandom(1, 15);
 		} while (this.Places.indexOf(number) > -1);
 		
 		this.Places[i] = number;
@@ -51,10 +51,11 @@ gameArea.prototype.move = function(number) {
 gameArea.prototype.getNearestEmptyIndex = function(index) {
 	var currentRow = Math.floor(index / gameArea.areaLineSize);
 	var currentColumn = Math.floor(index % gameArea.areaLineSize);
+	var axisOffers = [[0],[-1, 0, 1], [0]];
 	for (var i = -1; i <= 1; i++) {
 		var row = currentRow + i;
-		for (var j = -1; j <= 1; j++) {
-			var column = currentColumn + j;
+		for (var j = 0; j <= axisOffers[i + 1].length; j++) {
+			var column = currentColumn + axisOffers[i + 1][j];
 			if (this.isEmpty(row, column)) {
 				return row * gameArea.areaLineSize + column;
 			}
