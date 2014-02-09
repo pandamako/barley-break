@@ -44,5 +44,6 @@ describe('gameArea', function() {
 	it('should detect win sequence', function() {
 		var area = new gameArea();
 		area.Places.sort(function(a,b){return b === null ? -100 - a : a-b;});
+		expect(area.isWin()).toBe(true);
 	});
 });

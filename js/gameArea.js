@@ -74,3 +74,11 @@ gameArea.prototype.isEmpty = function (row, column) {
 	var index = row * gameArea.areaLineSize + column;
 	return this.Places[index] === null;
 };
+gameArea.prototype.isWin = function() {
+	for (var i = 0; i < 15; i++) {
+		if (this.Places[i] !== i + 1) {
+			return false;
+		}
+	};
+	return this.Places[15] === null ? true : false;
+};
