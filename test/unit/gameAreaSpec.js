@@ -30,7 +30,7 @@ describe('gameArea', function() {
 
 	it('places numbers must start from 1 to 15', function() {
 		var area = new gameArea();
-		area.Places.sort(function(a,b){return b === null ? -100 - a : a-b;});
+		area.Places.sort(function(a,b){a = a === null ? 16:a;b = b === null ? 16:b;return a - b;});
 		expect(area.Places).toEqual([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15, null]);
 	});
 
@@ -43,7 +43,7 @@ describe('gameArea', function() {
 
 	it('should detect win sequence', function() {
 		var area = new gameArea();
-		area.Places.sort(function(a,b){return b === null ? -100 - a : a-b;});
+		area.Places.sort(function(a,b){a = a === null ? 16:a;b = b === null ? 16:b;return a - b;});
 		expect(area.isWin()).toBe(true);
 	});
 });

@@ -13,10 +13,8 @@ gameApp.controller('pyatnashkyCtrl', function ($scope) {
 	$scope.move = function(number) {
 		area.move(number);
 		$scope.Places = area.Places;		
-	};
-	$scope.checkWin = function() {
 		if (area.isWin()) {
 			$($scope).trigger('win');
 		}
-	}
+	};
 });

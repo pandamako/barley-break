@@ -14,7 +14,7 @@
 <body ng-controller="pyatnashkyCtrl" class="container">
 	<h1>Пятнашки</h1>
 	<ul class="gameArea">
-		<li ng-repeat="place in Places" class="btn btn-default gameBtn" ng-click="move(place);checkWin()">
+		<li ng-repeat="place in Places" class="btn btn-default gameBtn" ng-click="move(place)">
 			<span>{{place}}</span>
 		</li>
 	</ul>
