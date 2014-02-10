@@ -8,7 +8,6 @@ gameApp.controller('pyatnashkyCtrl', function ($scope) {
 	$scope.hasWin = false;
 
 	$($scope).on('win', function() {
-		alert('win');
 		$scope.hasWin = true;
 	});
 
