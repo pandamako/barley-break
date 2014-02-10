@@ -1,22 +1,29 @@
 <!doctype html>
 <html lang="en" ng-app="gameApp">
-<head>
-  <meta charset="utf-8">
-  <title>My HTML File</title>
-  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/game.css">
-  <link rel="stylesheet" href="css/bootstrap-theme.css">
-  <script src="js/lib/angular/angular.js"></script>
-  <script src="js/gameArea.js"></script>  
-  <script src="js/game.js"></script>
-</head>
-<body ng-controller="pyatnashkyCtrl" class="container">
-	<h1>Пятнашки</h1>
-	<ul class="gameArea">
-		<li ng-repeat="place in Places" class="btn btn-default gameBtn" ng-click="move(place)">
-			<span>{{place}}</span>
-		</li>
-	</ul>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>My HTML File</title>
+        <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/game.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <script src="js/lib/angular/angular.js"></script>
+        <script src="js/gameArea.js"></script>  
+        <script src="js/game.js"></script>
+    </head>
+    <body ng-controller="pyatnashkyCtrl" class="container">
+    	<h1>Пятнашки</h1>
+        <div class="alert alert-success" ng-Hide="!hasWin">Поздравляем! Вы победили!!!</div>
+    	<ul class="gameArea">
+    		<li ng-repeat="place in Places" class="btn btn-default gameBtn" ng-click="move(place)">
+    			<span>{{place}}</span>
+    		</li>
+    	</ul>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default" ng-click="restart()">
+                Restart game 
+                <span class="glyphicon glyphicon-refresh"></span>
+            </button>
+        </div>
+    </body>
 </html>
